@@ -3,9 +3,11 @@ var Park = function() {
 }
 
 Park.prototype = {
+    
     addDino: function(dino) {
         this.dinosaurList.push(dino);
     },
+
     removeDinoByType: function(type) {
         var newArray = [];
         for (dino of this.dinosaurList) {
@@ -15,6 +17,7 @@ Park.prototype = {
         }
         this.dinosaurList = newArray;
     },
+
     dinosWithLotsOfOffspring: function() {
         var fertileArray = [];
         for (dino of this.dinosaurList) {
@@ -24,6 +27,7 @@ Park.prototype = {
         }
         return fertileArray;
     },
+
     passYear: function() {
         var newDinos = [];
         for (var dino of this.dinosaurList) {
@@ -35,6 +39,7 @@ Park.prototype = {
             this.dinosaurList.push(dino);
         }
     },
+
     replicaDinoList: function() {
         var replicaList = [];
         for (var dino of this.dinosaurList) {
@@ -42,6 +47,7 @@ Park.prototype = {
         }
         return replicaList;
     },
+
     calculateGrowth: function(years) {
         var oldDinos = this.replicaDinoList();
         for (var i=0; i < years; i++) {
