@@ -3,7 +3,7 @@ var Park = function() {
 }
 
 Park.prototype = {
-    
+
     addDino: function(dino) {
         this.dinosaurList.push(dino);
     },
@@ -62,8 +62,15 @@ Park.prototype = {
             }
         }
         return oldDinos.length;
-    }
+    },
 
+    efficientEstimate: function(years) {
+        var totalDino = 0;
+        for (var dino of this.dinosaurList) {
+            totalDino += (dino.fertility + 1)**years;
+        }
+        return totalDino;
+    }
 }
 
 module.exports = Park;
